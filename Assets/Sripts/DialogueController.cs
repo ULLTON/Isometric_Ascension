@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using static System.Net.WebRequestMethods;
+using UnityEngine.InputSystem;
+
 
 public class DialogueController : MonoBehaviour
 {
@@ -25,7 +28,14 @@ public class DialogueController : MonoBehaviour
         
         else
         {
-            SetText("");
+            if (highestHeight > 25 && highestHeight <= 30)
+            {
+                SetText("Back when i was a wee pocket watch- what do you mean you aren't interested? Alright then, i won't say it. *rude..*");
+            }
+            else
+            {
+                SetText("");
+            }
         }
     }
 
