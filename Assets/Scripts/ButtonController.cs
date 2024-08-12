@@ -1,7 +1,6 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UIElements;
-using UnityEditor.AI;
 
 public class ButtonController : MonoBehaviour
 {
@@ -20,8 +19,7 @@ public class ButtonController : MonoBehaviour
                 door.ActivateDoor();
             }
 
-            NavMeshBuilder.ClearAllNavMeshes();
-            NavMeshBuilder.BuildNavMesh();
+
             StartCoroutine(wait());
         }
     }

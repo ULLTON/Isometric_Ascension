@@ -7,8 +7,6 @@ using UnityEngine.ProBuilder.MeshOperations;
 
 public class PlayerController : MonoBehaviour
 {
-    const string IDLE = "Idle";
-    const string WALK = "Walk";
 
     CustomActions input;
 
@@ -19,12 +17,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] ParticleSystem clickEffect;
     [SerializeField] LayerMask clickableLayers;
 
-    float lookRotationSpeed = 8f;
 
     void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
-        animator = GetComponent<Animator>();
 
         input = new CustomActions();
         AssignInputs();
@@ -61,7 +57,6 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         //FaceTarget();
-        SetAnimations();
     }
 
     /*void FaceTarget()
@@ -70,16 +65,4 @@ public class PlayerController : MonoBehaviour
         Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0, direction.z));
         transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * lookRotationSpeed);
     }*/
-
-    void SetAnimations()
-    {
-        if (agent.velocity == Vector3.zero)
-        {
-            animator.Play(IDLE);
-        }
-        else
-        {
-            animator.Play(WALK);
-        }
-    }
 }
