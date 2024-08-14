@@ -30,7 +30,7 @@ public class DialogueController : MonoBehaviour
         
         else
         {
-            if (highestHeight > 25 && highestHeight <= 30)
+            if (highestHeight > 25 && highestHeight <= 30 && currentHeight > 25)
             {
                 SetText("Back when i was a wee pocket watch- what do you mean you aren't interested? Alright then, i won't say it. *rude..*");
                 box.SetActive(true);
