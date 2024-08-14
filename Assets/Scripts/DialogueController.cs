@@ -10,6 +10,7 @@ public class DialogueController : MonoBehaviour
 {
     [SerializeField] TMP_Text text;
     [SerializeField] private GameObject player;
+    [SerializeField] private GameObject box;
     private float currentHeight;
     private float highestHeight;
     string user = (System.Environment.UserName);
@@ -24,6 +25,7 @@ public class DialogueController : MonoBehaviour
         if (highestHeight <= 1)
         {
             SetText("Rise and shine, " + user + ", it's time to keep ascending! Hehe. Time. Y-y'see, it's funny because i'm a clock. Ok bye.");
+            box.SetActive(true);
         }
         
         else
@@ -31,10 +33,12 @@ public class DialogueController : MonoBehaviour
             if (highestHeight > 25 && highestHeight <= 30)
             {
                 SetText("Back when i was a wee pocket watch- what do you mean you aren't interested? Alright then, i won't say it. *rude..*");
+                box.SetActive(true);
             }
             else
             {
                 SetText("");
+                box.SetActive(false);
             }
         }
     }
